@@ -7,7 +7,8 @@ def copy_file(command: str) -> None:
     if file_name == new_file_name:
         return
     try:
-        with open(file_name, "r") as file, open(new_file_name, "w") as new_file:
+        with (open(file_name, "r") as file,
+              open(new_file_name, "w") as new_file):
             content_to_copy = file.read()
             new_file.write(content_to_copy)
     except FileNotFoundError:
